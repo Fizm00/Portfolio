@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import emailjs from "@emailjs/browser";
+import AOS from "aos"; // Import AOS
+import "aos/dist/aos.css"; // Import AOS CSS
 
 const Contact = () => {
   const [isSnackbarVisible, setIsSnackbarVisible] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Initialize AOS on component mount
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+    AOS.refresh();
+  }, []);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +51,9 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Informasi Kontak */}
           <div className="space-y-8" data-aos="fade-right">
-            <h2 className="text-2xl font-bold">Contact <span className="text-purple-500">Information</span></h2>
+            <h2 className="text-2xl font-bold">
+              Contact <span className="text-purple-500">Information</span>
+            </h2>
             <p className="text-gray-400 leading-loose">
               I’m open to discussing new projects, creative ideas, or
               opportunities to be part of your visions. Feel free to contact me

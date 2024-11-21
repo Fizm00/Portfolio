@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -89,12 +90,19 @@ const Hero = () => {
             gap between design and technology.
           </p>
           <div className="flex flex-wrap space-x-4 justify-center md:justify-start">
-            <button className="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded transition duration-300">
+            <Link
+              to="/contact"
+              className="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded transition duration-300"
+            >
               Let's Talk Now
-            </button>
-            <button className="border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white py-2 px-4 rounded transition duration-300">
+            </Link>
+
+            <Link
+              to="/projects"
+              className="border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white py-2 px-4 rounded transition duration-300"
+            >
               View My Work
-            </button>
+            </Link>
           </div>
           <div className="flex flex-wrap justify-center md:justify-start  space-x-4 mt-6">
             <a
