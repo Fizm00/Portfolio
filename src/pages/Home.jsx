@@ -1,10 +1,10 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Navbar from "../components/navbar";
+import Hero from "../components/Home/Hero";
 
 const Home = () => {
   return (
-    <div id="home">
+    <div id="home" className="pt-20">
       <Navbar />
       <Hero />
     </div>
