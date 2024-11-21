@@ -14,7 +14,7 @@ const Hero = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
     AOS.refresh();
-    
+
     let textIndex = 0;
     const textInterval = setInterval(() => {
       if (textIndex < fullText.length) {
@@ -40,21 +40,43 @@ const Hero = () => {
 
   return (
     <section className="bg-black text-white">
-      <div className="max-w-screen-xl mx-auto px-4 md:px-12 xl:px-34 grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-40">
+      <div
+        className="max-w-screen-xl mx-auto px-6 md:px-12 xl:px-42 grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-24 md:py-32"
+        style={{ gridAutoFlow: "dense" }}
+      >
+        {/* Gambar */}
+        <div
+          className="relative order-1 md:order-none"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <img
+            src="pictprofile2.jpg"
+            alt="Profile"
+            className="rounded-full aspect-square w-[300px] md:w-[400px] object-cover border-2 border-purple-500 hover:scale-110 hover:rotate-3 transition-transform duration-500 mx-auto md:mx-0"
+          />
+        </div>
+
         {/* Teks Perkenalan */}
-        <div className="space-y-8 text-center md:text-left" data-aos="fade-up">
+        <div
+          className="space-y-8 text-center md:text-left order-2 md:order-none leading-relaxed"
+          data-aos="fade-up"
+        >
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             <div>{text}</div>
             <div className="mt-2">
               <span className="text-purple-500">
                 {nameText}
-                {!isTypingText && <span className="blinking-cursor text-purple-500">|</span>}
+                {!isTypingText && (
+                  <span className="blinking-cursor text-purple-500">|</span>
+                )}
               </span>
             </div>
           </h1>
-          <p className="text-base md:text-lg">
-            I am a <span className="text-purple-500">Frontend Developer</span>{" "}
-            with experience in building responsive, user-friendly websites & Progressive Web Apps using{" "}
+          <p className="text-base md:text-lg leading-relaxed">
+            I am a <span className="text-purple-500 leading-relaxed">Frontend Developer</span>{" "}
+            with experience in building responsive, user-friendly websites &
+            Progressive Web Apps using{" "}
             <span className="text-purple-500">React</span>,{" "}
             <span className="text-purple-500">Vite</span>, and{" "}
             <span className="text-purple-500">Tailwind CSS</span>.
@@ -71,7 +93,7 @@ const Hero = () => {
               View My Work
             </button>
           </div>
-          <div className="flex flex-wrap justify-center md:justify-start space-x-4 mt-6">
+          <div className="flex flex-wrap justify-center md:justify-start  space-x-4 mt-6">
             <a
               href="https://www.linkedin.com/in/firzahimawan/"
               target="_blank"
@@ -97,15 +119,6 @@ const Hero = () => {
               <FaInstagram size={24} />
             </a>
           </div>
-        </div>
-
-        {/* Gambar */}
-        <div className="relative justify-self-end" data-aos="fade-up" data-aos-delay="300">
-          <img
-            src="pictprofile2.jpg"
-            alt="Profile"
-            className="rounded-full aspect-square w-[400px] object-cover border-2 border-purple-500 hover:scale-110 hover:rotate-3 transition-transform duration-500"
-          />
         </div>
       </div>
     </section>
