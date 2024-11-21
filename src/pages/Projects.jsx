@@ -22,7 +22,7 @@ const Projects = () => {
 
   const handleFilterChange = (tag) => {
     setSelectedTag(tag);
-    AOS.refresh(); // Pastikan elemen baru dikenali oleh AOS
+    AOS.refresh(); 
   };
 
   const handleViewDetails = (project) => setSelectedProject(project);
