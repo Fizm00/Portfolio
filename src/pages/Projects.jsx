@@ -1,42 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/navbar";
 import Filters from "../components/projects/Filters";
 import List from "../components/projects/List";
 import Modal from "../components/projects/Modal";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { projects } from "../data/projects";
 
 const Projects = () => {
   const [selectedTag, setSelectedTag] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
 
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const filteredProjects =
     selectedTag === "All"
       ? projects
       : projects.filter((project) => project.tags.includes(selectedTag));
 
-  const handleFilterChange = (tag) => setSelectedTag(tag);
+  const handleFilterChange = (tag) => {
+    setSelectedTag(tag);
+    AOS.refresh(); // Pastikan elemen baru dikenali oleh AOS
+  };
 
   const handleViewDetails = (project) => setSelectedProject(project);
 
   return (
     <div id="projects" className="bg-black text-white min-h-screen pt-20">
       <Navbar />
-      <section id="projects" className="max-w-screen-lg mx-auto px-6 py-20">
-        <h1 className="text-4xl font-bold mb-12 text-center">
+      <section className="max-w-screen-lg mx-auto px-4 py-20">
+        <h1 className="text-4xl font-bold mb-14 text-center">
           My <span className="text-purple-500">Projects</span>
         </h1>
 
         {/* Filter Buttons */}
-        <Filters
-          selectedTag={selectedTag}
-          onFilterChange={handleFilterChange}
-        />
+        <Filters selectedTag={selectedTag} onFilterChange={handleFilterChange} />
 
         {/* Project Cards */}
-        <List
-          projects={filteredProjects}
-          onViewDetails={handleViewDetails}
-        />
+        <List projects={filteredProjects} onViewDetails={handleViewDetails} />
 
         {/* Modal for Project Details */}
         {selectedProject && (

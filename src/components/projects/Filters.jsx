@@ -4,7 +4,7 @@ const tags = ["All", "React", "Node.js", "Python", "Frontend", "Backend"];
 
 const ProjectFilters = ({ selectedTag, onFilterChange }) => {
   return (
-    <div className="mb-6 text-center">
+    <div className="mb-16 text-center">
       {tags.map((tag) => (
         <button
           key={tag}
