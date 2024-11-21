@@ -6,4 +6,4 @@ const Footer = () => (
   </footer>
 );
 
-export default footer;
+export default Footer;
