@@ -49,7 +49,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center">
         {/* Logo */}
-        <div className="text-4xl font-bold text-white font-sans">Fizm</div>
+        <div className="text-3xl font-bold text-white font-sans">Fizm</div>
 
         {/* Hamburger Menu */}
         <button
@@ -68,7 +68,7 @@ const Navbar = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {navItems.map((item) => (
-            <li key={item.name} className="relative group text-center md:text-left text-xl leading-loose">
+            <li key={item.name} className="relative group text-center md:text-left text-md leading-loose">
               <Link
                 to={item.path}
                 onClick={() => setIsOpen(false)}

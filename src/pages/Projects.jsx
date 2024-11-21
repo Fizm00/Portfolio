@@ -22,7 +22,7 @@ const Projects = () => {
 
   const handleFilterChange = (tag) => {
     setSelectedTag(tag);
-    AOS.refresh(); 
+    AOS.refresh();
   };
 
   const handleViewDetails = (project) => setSelectedProject(project);
@@ -36,8 +36,12 @@ const Projects = () => {
         </h1>
 
         {/* Filter Buttons */}
-        <Filters selectedTag={selectedTag} onFilterChange={handleFilterChange} />
-
+        <div className="py-6">
+          <Filters
+            selectedTag={selectedTag}
+            onFilterChange={handleFilterChange}
+          />
+        </div>
         {/* Project Cards */}
         <List projects={filteredProjects} onViewDetails={handleViewDetails} />
 

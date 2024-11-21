@@ -74,7 +74,10 @@ const Hero = () => {
             </div>
           </h1>
           <p className="text-base md:text-lg leading-relaxed">
-            I am a <span className="text-purple-500 leading-relaxed">Frontend Developer</span>{" "}
+            I am a{" "}
+            <span className="text-purple-500 leading-relaxed">
+              Frontend Developer
+            </span>{" "}
             with experience in building responsive, user-friendly websites &
             Progressive Web Apps using{" "}
             <span className="text-purple-500">React</span>,{" "}
