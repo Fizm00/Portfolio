@@ -2,7 +2,7 @@
 
 A modern and responsive portfolio website built using React, Vite, and Tailwind CSS. This website showcases my skills, projects, and contact information with smooth animations and an elegant design.
 
-[click here to the website](https://fizmportfolio.vercel.app)
+click [here](https://fizmportfolio.vercel.app) to the website
 
 <p align="center">
   <img src="Preview.png" alt="Portfolio Preview" width="800">
