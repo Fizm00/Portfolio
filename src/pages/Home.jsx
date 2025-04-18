@@ -3,7 +3,7 @@ import Hero from "../components/Home/Hero";
 
 const Home = () => {
   return (
-    <div id="home" className="pt-24">
+    <div className="relative h-screen overflow-hidden">
       <Navbar />
       <Hero />
     </div>

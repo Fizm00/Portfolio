@@ -38,6 +38,7 @@ const About = () => {
         <div className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full bg-emerald-500/15 blur-3xl"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.03),transparent_60%)]"></div>
         <div className="absolute inset-0 opacity-5 bg-[size:40px_40px] [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.08)_1px,transparent_1px)]"></div>
+        <div className="absolute inset-0 opacity-10 bg-[size:30px_30px] [background-image:linear-gradient(to_right,rgba(123,104,238,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(123,104,238,0.15)_1px,transparent_1px)]"></div>
       </div>
 
       <div className="relative z-10">

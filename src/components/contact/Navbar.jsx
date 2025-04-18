@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-const Navbar = () => {
+const Navbar = ({ isSticky = true }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -45,11 +46,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 left-0 w-full z-50 px-6 md:px-36 py-6 transition-all duration-500 ${isScrolled || isOpen ? "backdrop-blur-md shadow-xl" : "bg-transparent"
-        }`}
-    >
+    className={`${isSticky ? "sticky top-0" : "relative"} left-0 w-full z-50 px-6 md:px-36 py-6 transition-all duration-500 ${isScrolled || isOpen ? "backdrop-blur-md shadow-xl" : "bg-transparent"}`}
+  >
       <div className="flex justify-between items-center max-w-7xl mx-auto">
-        {/* Logo */}
         <div
           className="text-3xl font-bold text-white font-sans cursor-pointer group"
           onClick={() => (window.location.href = "/")}
@@ -60,7 +59,6 @@ const Navbar = () => {
           </span>
         </div>
 
-        {/* Hamburger Menu */}
         <button
           className="md:hidden cursor-pointer text-white text-3xl  focus:outline-none z-50 transition-transform hover:scale-110"
           onClick={toggleMenu}
@@ -73,7 +71,6 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Navbar Links */}
         <ul
           className={`absolute md:static top-0 left-0 w-full md:w-auto h-screen md:h-auto z-40 bg-black/90 md:bg-transparent backdrop-blur-md md:backdrop-blur-none flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12 text-lg font-medium transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
             }`}
@@ -109,6 +106,9 @@ const Navbar = () => {
       </div>
     </nav>
   );
+};
+Navbar.propTypes = {
+  isSticky: PropTypes.bool,
 };
 
 export default Navbar;

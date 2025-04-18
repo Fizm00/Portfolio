@@ -132,24 +132,25 @@ const Hero = () => {
         className="fixed top-0 left-0 w-full h-full opacity-20 md:opacity-30 pointer-events-none z-0"
       />
 
-      <div className="absolute inset-12 flex items-start md:items-center justify-center overflow-y-auto pt-12 md:pt-0">
-        <div className="w-full h-full md:h-auto flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-10 items-center px-4 md:px-12 pt-12 pb-12 relative z-10">
+       {/* Main content container with enhanced centering */}
+       <div className="relative h-full flex items-center justify-center pt-24 pb-12 px-4 md:px-12">
+        <div className="max-w-screen-xl w-full mx-auto h-auto md:h-[70vh] flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           <div
-            className="order-1 md:order-none w-full flex justify-center"
+            className="w-full flex justify-center order-1 md:order-none"
             data-aos="fade-up"
             data-aos-delay="300"
           >
             <img
               src="pictprofile2.jpg"
               alt="Profile"
-              className="rounded-full aspect-square w-[200px] sm:w-[250px] md:w-[400px] object-cover border-2 border-purple-500 hover:scale-110 hover:rotate-3 transition-transform duration-500 mx-auto"
+              className="rounded-full aspect-square w-[200px] sm:w-[250px] md:w-[350px] lg:w-[400px] xl:w-[450px] object-cover border-2 border-purple-500 hover:scale-110 hover:rotate-3 transition-transform duration-500 mx-auto"
             />
           </div>
 
-          <div className="order-2 md:order-none space-y-4 md:space-y-8 text-center md:text-left leading-relaxed px-2" data-aos="fade-up">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+          <div className="space-y-4 md:space-y-6 lg:space-y-8 text-center md:text-left leading-relaxed order-2 md:order-none py-8 md:py-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
               <div>{text}</div>
-              <div className="mt-1 md:mt-2">
+              <div className="mt-3 md:mt-4 lg:mt-5">
                 <span className="text-purple-500">
                   {nameText}
                   {!isTypingText && (
@@ -159,28 +160,29 @@ const Hero = () => {
               </div>
             </h1>
 
-            <p className="text-base md:text-lg leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl leading-relaxed max-w-[600px]">
               I am a{" "}
               <span className="text-purple-500">Fullstack Developer</span>{" "}
               specializing in the{" "}
               <span className="text-purple-500">MERN Stack</span> (MongoDB, Express.js, React, Node.js)
               with expertise in building end-to-end web applications.
             </p>
-            <p className="text-sm text-gray-400">
+            
+            <p className="text-sm md:text-base text-gray-400 max-w-[600px]">
               Passionate about creating full-cycle solutions that bridge business requirements
               with technical implementation, from database design to UI/UX.
             </p>
 
-            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8 md:mt-10">
               <Link
                 to="/contact"
-                className="bg-purple-700 hover:bg-purple-500 text-white py-2 px-4 rounded transition duration-300 text-sm md:text-base"
+                className="bg-purple-700 hover:bg-purple-500 text-white py-3 px-8 rounded transition duration-300 text-base md:text-lg"
               >
                 Let&#39;s Talk Now
               </Link>
               <Link
                 to="/projects"
-                className="border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white py-2 px-4 rounded transition duration-300 text-sm md:text-base"
+                className="border border-purple-500 text-purple-500 hover:bg-purple-500 hover:text-white py-3 px-8 rounded transition duration-300 text-base md:text-lg"
               >
                 View My Work
               </Link>
