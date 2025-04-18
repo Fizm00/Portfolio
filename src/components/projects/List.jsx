@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 import ProjectCard from "./Card";
 import AOS from "aos";
 
@@ -16,7 +17,6 @@ const ProjectList = ({ projects, onViewDetails }) => {
   }
 
   return (
-    // Gunakan kunci unik untuk memaksa ulang render saat daftar proyek berubah
     <div key={projects.map((p) => p.id).join(",")} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {projects.map((project) => (
         <ProjectCard
@@ -27,6 +27,14 @@ const ProjectList = ({ projects, onViewDetails }) => {
       ))}
     </div>
   );
+};
+ProjectList.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    })
+  ).isRequired,
+  onViewDetails: PropTypes.func.isRequired,
 };
 
 export default ProjectList;

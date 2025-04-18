@@ -1,4 +1,3 @@
-import React from "react";
 import GoogleMaps from "./GoogleMaps"; // Panggil GoogleMaps di sini
 
 const ContactInfo = () => {

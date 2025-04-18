@@ -1,5 +1,3 @@
-import React from "react";
-
 const GoogleMaps = () => {
   return (
     <div className="mt-8" data-aos="zoom-in">
